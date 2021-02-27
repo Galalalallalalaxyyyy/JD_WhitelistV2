@@ -1,6 +1,3 @@
-PerformHttpRequest("https://jokedevil.com/premium?id="..Config.DiscordID, function (errorCode, resultData, resultHeaders)
-	if resultData == '1' then 
-
 	RegisterServerEvent("getIsVehAllowed")
 	AddEventHandler("getIsVehAllowed", function(AcePerm)
 		if IsPlayerAceAllowed(source, AcePerm) then
@@ -87,4 +84,3 @@ PerformHttpRequest("https://jokedevil.com/premium?id="..Config.DiscordID, functi
 		end
 		return identifiers.steam
 	end
-end
