@@ -1,1 +1,1 @@
-For support join my Discord: https://discord.gg/qyPdHzDKmb
+For support join my Discord: https://discord.gg/prefech
