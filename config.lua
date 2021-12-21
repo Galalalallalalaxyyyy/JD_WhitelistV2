@@ -12,21 +12,21 @@ Config = {}
 -- 0 = The vehcile won't delete but you will be ejected out of the diver seat.
 
 Config.Vehicles = {
-	--{GetHashKey("apc"), "jd.stafff","0"},
-	--{GetHashKey("apc"), "jd.staff","1"},
+	--{GetHashKey("apc"), "police","0"},
+	--{GetHashKey("apc"), "police","1"},
 }
 
 Config.Weapons = {
-	--{GetHashKey("WEAPON_PISTOL"), "jd.staff"},
+	--{GetHashKey("WEAPON_PISTOL"), "police"},
 	--{GetHashKey("WEAPON_PISTOL_MK2"), "jd.none"},
 }
 
 Config.WeaponComponents = {
-	--{GetHashKey("COMPONENT_AT_PI_SUPP_02"), "jd.staff"},
+	--{GetHashKey("COMPONENT_AT_PI_SUPP_02"), "police"},
 	--{GetHashKey("COMPONENT_AT_PI_FLSH"), "jd.none"},
 }
 
 Config.Peds = {
-	--{GetHashKey("mp_m_freemode_01"), "jd.staff"},
+	--{GetHashKey("mp_m_freemode_01"), "police"},
 	--{GetHashKey("player_one"), "jd.none"},
 }
