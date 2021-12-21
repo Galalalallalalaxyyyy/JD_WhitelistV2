@@ -28,6 +28,7 @@ Citizen.CreateThread(function()
 		
 		if DoesEntityExist(veh) then
 			if lockedVehicle(VehHash) ~= 0 then
+				print(lockedVehicle(VehHash))
 				if ESX.GetPlayerData().job.name ~= lockedVehicle(VehHash) then
 					if GetPedInVehicleSeat(veh, -1) == iPed then
 						ClearPedTasksImmediately(iPed)
@@ -137,3 +138,8 @@ function ShowInfo(text)
 	AddTextComponentSubstringPlayerName(text)
 	DrawNotification(false, false)
 end
+
+RegisterNetEvent('esx:setJob')
+AddEventHandler('esx:setJob', function(job)
+    ESX.PlayerData = ESX.GetPlayerData()
+end)
