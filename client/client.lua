@@ -28,8 +28,7 @@ Citizen.CreateThread(function()
 		
 		if DoesEntityExist(veh) then
 			if lockedVehicle(VehHash) ~= 0 then
-				print(lockedVehicle(VehHash))
-				if ESX.GetPlayerData().job.name ~= lockedVehicle(VehHash) then
+				if ESX.PlayerData.job.name ~= lockedVehicle(VehHash) then
 					if GetPedInVehicleSeat(veh, -1) == iPed then
 						ClearPedTasksImmediately(iPed)
 						SetEntityAsMissionEntity(veh, true, true)
@@ -51,7 +50,7 @@ Citizen.CreateThread(function()
 		local gun = GetSelectedPedWeapon(iPed)
 		if gun ~= GetHashKey("WEAPON_UNARMED") then
 			if lockedWeapons(gun) ~= 0 then
-				if ESX.GetPlayerData().job.name ~= lockedWeapons(gun) then
+				if ESX.PlayerData.job.name ~= lockedWeapons(gun) then
 					RemoveWeaponFromPed(iPed, gun)
 					ShowInfo("You ~r~don't ~w~have permission to use this Weapon")
 				end
@@ -68,7 +67,7 @@ Citizen.CreateThread(function()
 		if gun ~= GetHashKey("WEAPON_UNARMED") then
 			if checkComps(gun) ~= nil then
 				local comp = checkComps(gun)
-				if ESX.GetPlayerData().job.name ~= lockedWeaponComps(comp) then
+				if ESX.PlayerData.job.name ~= lockedWeaponComps(comp) then
 					RemoveWeaponComponentFromPed(iPed, gun, comp)
 					ShowInfo("You ~r~don't ~w~have permission to use this weapon component")
 				end
@@ -83,7 +82,7 @@ Citizen.CreateThread(function()
 		local model = GetEntityModel(iPed)
 		Citizen.Wait(0)
 		if checkPed(model) ~= 0 then
-			if ESX.GetPlayerData().job.name ~= checkPed(model) then
+			if ESX.PlayerData.job.name ~= checkPed(model) then
 				print("not Allowed")
 				SetPlayerModel(PlayerId(), GetHashKey("player_zero"))
 				ShowInfo("You ~r~don't ~w~have permission to use this Player Model")
@@ -141,5 +140,5 @@ end
 
 RegisterNetEvent('esx:setJob')
 AddEventHandler('esx:setJob', function(job)
-    ESX.PlayerData = ESX.GetPlayerData()
+    ESX.PlayerData = ESX.PlayerData
 end)
